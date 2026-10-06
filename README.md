@@ -69,7 +69,10 @@ docker compose exec db psql -U logistpulse -d logistpulse   # consola SQL
 | GET    | `/health`          | Estado de la API y de la BD    | `200 OK`  |
 | POST   | `/api/pedidos`     | Crea un pedido                 | `201 Created` / `400 Bad Request` |
 | GET    | `/api/pedidos`     | Lista los pedidos              | `200 OK`  |
+| GET    | `/api/pedidos/estados` | Estados válidos del ciclo de vida de un pedido | `200 OK` |
 | GET    | `/api/pedidos/:id` | Obtiene un pedido por id       | `200 OK` / `404 Not Found` |
+
+Ciclo de vida de un pedido: `PENDIENTE` → `EN_PREPARACION` → `EN_TRANSITO` → `ENTREGADO` (o `CANCELADO`).
 
 ### Ejemplos
 
