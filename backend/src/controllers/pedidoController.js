@@ -32,4 +32,8 @@ async function obtener(req, res, next) {
   }
 }
 
-module.exports = { crear, listar, obtener };
+function estados(req, res) {
+  res.json(Pedido.ESTADOS);
+}
+
+module.exports = { crear, listar, obtener, estados };
